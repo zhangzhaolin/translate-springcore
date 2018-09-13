@@ -1,4 +1,4 @@
-# 1-2 Spring容器概述
+# 1.2 Spring容器概述
 
 接口 `org.springframework.context.ApplicationContext` 代表Spring IOC容器，负责实例化、配置、组装上述bean。容器通过读取配置数据，来知道哪些对象被实例化、配置、组装。配置源数据可以用XML、Java注解或者Java代码来表示。配置元数据允许您描述组成您应用的对象，以及对象之间丰富的相互依赖性。
 
