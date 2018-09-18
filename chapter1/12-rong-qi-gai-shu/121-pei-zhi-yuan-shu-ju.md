@@ -8,14 +8,14 @@
 
 有关在Spring IOC容器中使用其他方式配置元数据的信息，请参阅：
 
-- [基于注解配置](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-annotation-config) : Spring2.5引入了对基于注解配置的支持
+- [基于注解配置](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-annotation-config) : Spring2.5引入了对基于注解配置的支持。
 - [基于Java配置](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-java): 从3.0开始, 许多由Java配置的功能都成为了Spring FrameWork的一部分。因此，您可以在应用程序外部使用Java而非XML来定义bean。要使用这些新功能，请参阅`@Configuration`，`@Bean`，`@Import`，`@DependsOn`注解。
 
-Spring configuration consists of at least one and typically more than one bean definition that the container must manage. XML-based configuration metadata shows these beans configured as `<bean/>` elements inside a top-level `<beans/>` element. Java configuration typically uses `@Bean` annotated methods within a `@Configuration` class.
+Spring配置是容器必须管理的一个或者多个bean定义构成的。在基于XML配置的元数据中，这些bean被定义在`<bean>`，顶级元素为`<beans/>`。Java配置通常在`@Configuration`类中使用`@Bean`注解的方法。
 
-These bean definitions correspond to the actual objects that make up your application. Typically you define service layer objects, data access objects (DAOs), presentation objects such as Struts `Action` instances, infrastructure objects such as Hibernate `SessionFactories`, JMS `Queues`, and so forth. Typically one does not configure fine-grained domain objects in the container, because it is usually the responsibility of DAOs and business logic to create and load domain objects. However, you can use Spring’s integration with AspectJ to configure objects that have been created outside the control of an IoC container. See [Using AspectJ to dependency-inject domain objects with Spring](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#aop-atconfigurable).
+这些bean定义相当于应用程序中的那些实际的对象。通常您定义服务层对象，数据访问对象（DAOs），表示对象（例如Structs的`Action`实例），基础设施对象例如Hibernate的 `SessionFactories`, JMS的 `Queues`等。通常在容器中不会配置细粒度域对象，因为通常是由DAO和业务逻辑负责创建和加载域对象。然而，您可以使用Spring与AspectJ的集成/来配置/在IOC容器控制之外创建的/对象。参阅 [使用Aspectj与Spring依赖注入域对象](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#aop-atconfigurable)查看更多信息。
 
-The following example shows the basic structure of XML-based configuration metadata:
+以下实例展示了基于XML配置的元数据的基本结构：
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -25,17 +25,17 @@ The following example shows the basic structure of XML-based configuration metad
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="..." class="...">
-        <!-- collaborators and configuration for this bean go here -->
+        <!-- 该bean的协作对象和定义在这里编写 -->
     </bean>
 
     <bean id="..." class="...">
-        <!-- collaborators and configuration for this bean go here -->
+        <!-- 该bean的协作对象和定义在这里编写 -->
     </bean>
 
-    <!-- more bean definitions go here -->
+    <!-- 更多bean的定义 -->
 
 </beans>
 ```
 
-The `id` attribute is a string that you use to identify the individual bean definition. The `class` attribute defines the type of the bean and uses the fully qualified classname. The value of the id attribute refers to collaborating objects. The XML for referring to collaborating objects is not shown in this example; see [Dependencies](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-dependencies) for more information.
+ `id` 属性是一个字符串，用于识别单个bean的定义。 `class` 属性定义了bean的类型，并且为全限定类型。id属性值引用协作对象。本例没有展示如何引用协作对象 。详情参见[依赖关系](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-dependencies)。
 
