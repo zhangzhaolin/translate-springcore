@@ -8,5 +8,5 @@
 
 下面的图片展示了Spring是如何工作的，您的应用程序类和配置元数据结合，以便在`ApplicationContext`创建和初始化之后，您拥有一套完全可配、可运行的系统或应用程序。
 
-![1.Spring　IOC容器](http://zhangzhaolin.oss-cn-beijing.aliyuncs.com/18-9-16/71216340.jpg)
+![1.Spring IOC&#x5BB9;&#x5668;](http://zhangzhaolin.oss-cn-beijing.aliyuncs.com/18-9-16/71216340.jpg)
 

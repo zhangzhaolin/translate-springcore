@@ -8,8 +8,8 @@
 
 有关在Spring IOC容器中使用其他方式配置元数据的信息，请参阅：
 
-- [基于注解配置](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-annotation-config) : Spring2.5引入了对基于注解配置的支持。
-- [基于Java配置](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-java): 从3.0开始, 许多由Java配置的功能都成为了Spring FrameWork的一部分。因此，您可以在应用程序外部使用Java而非XML来定义bean。要使用这些新功能，请参阅`@Configuration`，`@Bean`，`@Import`，`@DependsOn`注解。
+* [基于注解配置](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-annotation-config) : Spring2.5引入了对基于注解配置的支持。
+* [基于Java配置](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-java): 从3.0开始, 许多由Java配置的功能都成为了Spring FrameWork的一部分。因此，您可以在应用程序外部使用Java而非XML来定义bean。要使用这些新功能，请参阅`@Configuration`，`@Bean`，`@Import`，`@DependsOn`注解。
 
 Spring配置是容器必须管理的一个或者多个bean定义构成的。在基于XML配置的元数据中，这些bean被定义在`<bean>`，顶级元素为`<beans/>`。Java配置通常在`@Configuration`类中使用`@Bean`注解的方法。
 
@@ -17,7 +17,7 @@ Spring配置是容器必须管理的一个或者多个bean定义构成的。在�
 
 以下实例展示了基于XML配置的元数据的基本结构：
 
-```xml
+```markup
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -37,5 +37,5 @@ Spring配置是容器必须管理的一个或者多个bean定义构成的。在�
 </beans>
 ```
 
- `id` 属性是一个字符串，用于识别单个bean的定义。 `class` 属性定义了bean的类型，并且为全限定类型。id属性值引用协作对象。本例没有展示如何引用协作对象 。详情参见[依赖关系](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-dependencies)。
+`id` 属性是一个字符串，用于识别单个bean的定义。 `class` 属性定义了bean的类型，并且为全限定类型。id属性值引用协作对象。本例没有展示如何引用协作对象 。详情参见[依赖关系](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-dependencies)。
 
